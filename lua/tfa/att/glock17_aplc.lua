@@ -8,7 +8,7 @@ ATTACHMENT.Icon = "entities/aplc.png"
 ATTACHMENT.Description = {
 	Color(255, 255, 50), "[+] Flashlight output: 200",
 	Color(255, 255, 50), "[+] Flashlight distance: 100",
-	Color(255, 255, 50), "[+] Flashlight beam intensity: 7600",
+	Color(255, 255, 50), "[+] Flashlight beam intensity: 6800",
 	Color(255, 50, 50), "[-] Ergonomics: -1",
 	Color(255, 255, 255), "[=] Weight: +0.116"
 }
@@ -25,7 +25,7 @@ ATTACHMENT.WeaponTable = {
 	["FlashlightAttachment"] = 1,
 	["FlashlightDistance"] = 100 * (3.28084 * 16),
 	["FlashlightBrightness"] = 500 * 0.01,
-	["FlashlightFOV"] = 7600 * 0.015,
+	["FlashlightFOV"] = 6800 * 0.015,
 	["FlashlightSoundToggleOn"] = Sound("TFA_GROVEZ.SHARED.FLASHLIGHT"),
 	["FlashlightSoundToggleOff"] = Sound("TFA_GROVEZ.SHARED.FLASHLIGHT")
 }

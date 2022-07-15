@@ -21,8 +21,8 @@ SWEP.Type_Displayed = "Pistol"
 SWEP.Ergonomics = 78
 
 --[[WEAPON HANDLING]]--
-SWEP.Primary.Sound = Sound("Weapon_EFT_Glock18.Fire") -- This is the sound of the weapon, when you shoot.
-SWEP.Primary.SilencedSound = Sound("Weapon_EFT_Glock18.Fire_Suppressed") -- This is the sound of the weapon, when silenced.
+SWEP.Primary.Sound = Sound("RTX_Glock17.Fire") -- This is the sound of the weapon, when you shoot.
+SWEP.Primary.SilencedSound = Sound("RTX_Glock17.Fire_Suppressed") -- This is the sound of the weapon, when silenced.
 SWEP.Primary.Damage = 29 -- Damage, in standard damage points.
 SWEP.Primary.Force = nil --Force value, leave nil to autocalc
 SWEP.Primary.Knockback = 0 --Autodetected if nil; this is the velocity kickback
