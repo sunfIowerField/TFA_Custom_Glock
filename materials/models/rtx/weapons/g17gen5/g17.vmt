@@ -1,0 +1,20 @@
+VertexLitGeneric
+{
+	$basetexture "models/rtx/weapons/g17gen5/g172"
+	$bumpmap "models/rtx/weapons/g17gen5/g17_nm"
+	$surfaceprop Weapon
+
+	$envmap "env_cubemap"
+	$envmaptint "[0.03 0.03 0.03]"
+	$envmapsaturation 0
+
+	$phong 1
+	$phongexponenttexture "models/rtx/weapons/g17gen5/g17_e"
+	$phongfresnelranges "[1 1 22.5]"
+	$phongtint "[0.07 0.07 0.07]"
+	$phongboost 0.24
+	$phongalbedoboost 0
+
+	$color2 "[0.80 0.80 0.80]"
+	$blendtintbybasealpha 1
+}

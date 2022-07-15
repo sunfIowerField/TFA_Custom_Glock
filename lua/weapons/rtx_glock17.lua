@@ -1,5 +1,5 @@
 SWEP.Base				= "tfa_custom_base"
-SWEP.Category				= "TFA UC Custom" --The category.  Please, just choose something generic or something I've already done if you plan on only doing like one swep..
+SWEP.Category				= "TFA RTX's Things" --The category.  Please, just choose something generic or something I've already done if you plan on only doing like one swep..
 SWEP.Manufacturer = "Glock" --Gun Manufactrer (e.g. Hoeckler and Koch )
 SWEP.Author				= "thatrtxdude" --Author Tooltip
 SWEP.Contact				= "" --Contact Info Tooltip
@@ -73,7 +73,7 @@ SWEP.ViewModelFOV			= 75		-- This controls how big the viewmodel looks.  Less is
 SWEP.ViewModelFlip			= false		-- Set this to true for CSS models, or false for everything else (with a righthanded viewmodel.)
 SWEP.UseHands = true --Use gmod c_arms system.
 -- SWEP.VMPos = Vector(-0.25, -0.15, -0.75)
-SWEP.VMPos = Vector(0, -5, 1)
+SWEP.VMPos = Vector(0, -3.6, 0.8)
 SWEP.VMPos_Additive = false --Set to false for an easier time using VMPos. If true, VMPos will act as a constant delta ON TOP OF ironsights, run, whateverelse
 --[[WORLDMODEL]]--
 SWEP.WorldModel			= "models/weapons/w_pistol.mdl" -- Weapon world model path
@@ -163,20 +163,6 @@ SWEP.LuaShellEject = true --Enable shell ejection through lua?
 SWEP.LuaShellEjectDelay = 0 --The delay to actually eject things
 SWEP.LuaShellEffect = "ShellEject" --The effect used for shell ejection; Defaults to that used for blowback
 --[[EVENT TABLE]]--
-local m_C = math.Clamp
-function SWEP:UpdateBeltBG(vm)
-	local target = self:Clip1()
-
-	if self:GetStatus() == TFA.Enum.STATUS_RELOADING then -- we predict next clip1 when reloading
-		target = self:Clip1() + self:Ammo1()
-	end
-
-	if self.IsChambered then -- we draw (clip1 - 1) bullets if weapon is chambered
-		target = target - 1
-	end
-
-	self.Bodygroups_V["Belt"] = m_C(target, 0, self:GetMaxClip1()) -- assuming we have at least (nax clip1 with upgrades) meshes in Belt bodygroup (first one is blank or empty mag insides)
-end
 
 SWEP.EventTable = {
 	["Draw"] = {
@@ -192,15 +178,15 @@ SWEP.EventTable = {
 		{time = 0, type = "sound", value = Sound("TFA_INS2.PistolHolster")},
 	},
 	["reload_empty"] = {
-		{time = 0.1, type = "sound", value = "weapons/glock17/magout.wav"},
-		{time = 0.92, type = "sound", value = "weapons/glock17/magin.wav"},
-		{time = 1.27, type = "sound", value = "weapons/glock17/slide_release.wav"},
-		{time = 1.41, type = "sound", value = "weapons/glock17/cloth.wav"},
+		{time = 0.1, type = "sound", value = "weapons/glock17/glock_reload_magout_01.wav"},
+		{time = 0.92, type = "sound", value = "weapons/glock17/glock_reload_magin_01.wav"},
+		{time = 1.28, type = "sound", value = "weapons/glock17/SlideForward.wav"},
+		{time = 1.49, type = "sound", value = "weapons/glock17/cloth.wav"},
 	},
 	["reload"] = {
 		{time = 0.0, type = "sound", value = "weapons/glock17/cloth2.wav"},
-		{time = 0.35, type = "sound", value = "weapons/glock17/magout.wav"},
-		{time = 0.92, type = "sound", value = "weapons/glock17/magin.wav"},
+		{time = 0.35, type = "sound", value = "weapons/glock17/glock_reload_magout_01.wav"},
+		{time = 0.92, type = "sound", value = "weapons/glock17/glock_reload_magin_01.wav"},
 		{time = 1.324, type = "sound", value = "weapons/glock17/cloth.wav"},
 	},
 		["ready"] = {
@@ -215,6 +201,7 @@ SWEP.EventTable = {
 --[[ATTACHMENTS]]--
 SWEP.Attachments = {
 	[11] = { atts = { "glock17_osprey9" }},
+	[12] = { atts = { "glock17_aplc" }},
 }
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
@@ -222,8 +209,8 @@ SWEP.AttachmentExclusions = {}
 local wscale = Vector(1, 1, 1)
 
 SWEP.ViewModelBoneMods = {
-	["glock_flash_supp"] = { ["pos"] = Vector(0, -0.2, 8), ["angle"] = Angle(0, 0, 0), ["scale"] = wscale },
-	["A_Underbarrel"] = { ["pos"] = Vector(0, 0, 0), ["angle"] = Angle(-90, 0, 0), ["scale"] = wscale },
+	["tag_flashlight_lightsource"] = {scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0)},
+	["tag_flashlight"] = {scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0)}
 }
 
 SWEP.Bodygroups_V = {
@@ -239,6 +226,8 @@ SWEP.VElements = {
 	["suppressor_osprey9"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/osprey/v_osprey.mdl", bone = "glock_flash", rel = "",  pos = Vector(0, 0.1, -0.1), angle = Angle(90, -90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 	["suppressor_rotor43"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/rotor/v_rotor.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 	["suppressor_srd9"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/srd/v_srd.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
+
+	["flashlight_aplc"] = { type = "Model", model = "models/weapons/upgrades/aplc.mdl", bone = "glock_parent", rel = "",  pos = Vector(0, -1.2, 5.2), angle = Angle(90, -90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 }
 
 SWEP.WElements = {
