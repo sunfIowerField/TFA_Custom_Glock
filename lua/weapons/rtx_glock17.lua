@@ -257,3 +257,5 @@ function SWEP:Think2()
     end
 	BaseClass.Think2(self)
 end
+
+-- hi this is github test
