@@ -1,0 +1,13 @@
+VertexLitGeneric
+{
+	$basetexture "models/rtx/weapons/g19gen3/glock19"
+	$bumpmap "models/rtx/weapons/g19gen3/glock19_nm"
+
+	$phong 1
+	$phongfresnelranges "[1 5 22.5]"
+	$phongtint "[0.53 0.53 0.53]"
+	$phongexponent 73
+	$phongboost 0.05
+
+	$color2 "[0.55 0.55 0.55]"
+}

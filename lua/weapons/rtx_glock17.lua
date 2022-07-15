@@ -9,7 +9,7 @@ SWEP.Spawnable				= (TFA and TFA.INS2) and true or false -- INSTALL SHARED PARTS
 SWEP.AdminSpawnable			= true --Can an adminstrator spawn this?  Does not tie into your admin mod necessarily, unless its coded to allow for GMod's default ranks somewhere in its code.  Evolve and ULX should work, but try to use weapon restriction rather than these.
 SWEP.DrawCrosshair			= true		-- Draw the crosshair?
 SWEP.DrawCrosshairIS = false --Draw the crosshair in ironsights?
-SWEP.PrintName				= "Glock 17 Gen 5"		-- Weapon name (Shown on HUD)
+SWEP.PrintName				= "Glock 19 Gen 3"		-- Weapon name (Shown on HUD)
 SWEP.Slot				= 1				-- Slot in the weapon selection menu.  Subtract 1, as this starts at 0.
 SWEP.SlotPos				= 74			-- Position in the slot
 SWEP.AutoSwitchTo			= true		-- Auto switch to if we pick it up
@@ -29,7 +29,7 @@ SWEP.Primary.Knockback = 0 --Autodetected if nil; this is the velocity kickback
 SWEP.Primary.HullSize = 0 --Big bullets, increase this value.  They increase the hull size of the hitscan bullet.
 SWEP.Primary.NumShots = 1 --The number of shots the weapon fires.  SWEP.Shotgun is NOT required for this to be >1.
 SWEP.Primary.Automatic = false -- Automatic/Semi Auto
-SWEP.Primary.RPM = 700 -- This is in Rounds Per Minute / RPM
+SWEP.Primary.RPM = 600 -- This is in Rounds Per Minute / RPM
 SWEP.Primary.Velocity = 315 -- m/s
 
 SWEP.FiresUnderwater = true
@@ -44,7 +44,7 @@ SWEP.FireSoundAffectedByClipSize = true -- Whenever adjuct pitch (and proably ot
 
 --Ammo Related
 SWEP.Primary.ClipSize = 17 -- This is the size of a clip
-SWEP.Primary.DefaultClip = SWEP.Primary.ClipSize * 4 -- This is the number of bullets the gun gives you, counting a clip as defined directly above.
+SWEP.Primary.DefaultClip = SWEP.Primary.ClipSize * 10 -- This is the number of bullets the gun gives you, counting a clip as defined directly above.
 SWEP.Primary.Ammo = "pistol" -- What kind of ammo.  Options, besides custom, include pistol, 357, smg1, ar2, buckshot, slam, SniperPenetratedRound, and AirboatGun.
 --Pistol, buckshot, and slam like to ricochet. Use AirboatGun for a light metal peircing shotgun pellets
 SWEP.Primary.AmmoConsumption = 1 --Ammo consumed per shot
@@ -68,7 +68,7 @@ SWEP.Primary.RangeFalloff = 5 / 35 -- The percentage of the range the bullet dam
 SWEP.IronRecoilMultiplier = 0.66 --Multiply recoil by this factor when we're in ironsights.  This is proportional, not inversely.
 SWEP.CrouchAccuracyMultiplier = 0.85 --Less is more.  Accuracy * 0.5 = Twice as accurate, Accuracy * 0.1 = Ten times as accurate
 --[[VIEWMODEL]]--
-SWEP.ViewModel			= "models/weapons/rtx_gen5_glock17.mdl" --Viewmodel path
+SWEP.ViewModel			= "models/weapons/rtx_gen3_g19.mdl" --Viewmodel path
 SWEP.ViewModelFOV			= 75		-- This controls how big the viewmodel looks.  Less is more.
 SWEP.ViewModelFlip			= false		-- Set this to true for CSS models, or false for everything else (with a righthanded viewmodel.)
 SWEP.UseHands = true --Use gmod c_arms system.
@@ -105,14 +105,13 @@ SWEP.CrouchAng = Vector(0, 0, -8.75)
 SWEP.data = {}
 SWEP.data.ironsights = 1 --Enable Ironsights
 SWEP.Secondary.IronFOV = 80 -- How much you 'zoom' in. Less is more!  Don't have this be <= 0.  A good value for ironsights is like 70.
-SWEP.IronSightsPos = Vector(-2.29, -3, 2.8)
+SWEP.IronSightsPos = Vector(-2.315, -3, 2.6)
 SWEP.IronSightsAng = Vector(0.5, 0, 0)
-SWEP.IronSightsReloadEnabled    = false
+SWEP.IronSightsReloadEnabled    = true
 SWEP.IronSightsPos_Point_Shooting = Vector(-4, -5, 1)
 SWEP.IronSightsAng_Point_Shooting = Vector(0, 0, -30)
 SWEP.Secondary.Point_Shooting_FOV = 75
 -- Lock ADS state when reloading
-SWEP.IronSightsReloadLock       = false
 --[[INSPECTION]]--
 -- SWEP.InspectPos = Vector(9.78, -9.658, -2.241) --Vector(0,0,0) --Replace with a vector, in style of ironsights position, to be used for inspection
 -- SWEP.InspectAng = Vector(24.622, 42.915, 15.477) --Vector(0,0,0) --Replace with a vector, in style of ironsights angle, to be used for inspection
@@ -122,8 +121,6 @@ SWEP.InspectAng = Vector(24.622, 42.915, 15.477)
 SWEP.StatusLengthOverride = {
 	[ACT_VM_RELOAD] = 64 / 30,
 	[ACT_VM_RELOAD_EMPTY] = 64 / 30,
-	["base_reload_extmag"] = 64 / 30,
-	["base_reload_empty_extmag"] = 64 / 30,
 } --Changes the status delay of a given animation; only used on reloads.  Otherwise, use SequenceLengthOverride or one of the others
 
 SWEP.Sights_Mode = TFA.Enum.LOCOMOTION_LUA -- ANI = mdl, HYBRID = lua but continue idle, Lua = stop mdl animation
@@ -190,10 +187,8 @@ SWEP.EventTable = {
 		{time = 1.324, type = "sound", value = "weapons/glock17/cloth.wav"},
 	},
 		["ready"] = {
-		{time = 0.5, type = "sound", value = "weapons/glock17/slideback.wav"},
-		{time = 0.18, type = "sound", value = "weapons/glock17/mag_hit.wav"},
-		{time = 0.7, type = "sound", value = "weapons/glock17/slide_release.wav"},
-		{time = 0.88, type = "sound", value = "weapons/glock17/cloth2.wav"},
+		{time = 0.3, type = "sound", value = "weapons/glock17/slideback.wav"},
+		{time = 0.55, type = "sound", value = "weapons/glock17/slide_release.wav"},
 	},
 	
 }
@@ -227,7 +222,7 @@ SWEP.VElements = {
 	["suppressor_rotor43"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/rotor/v_rotor.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 	["suppressor_srd9"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/srd/v_srd.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 
-	["flashlight_aplc"] = { type = "Model", model = "models/weapons/upgrades/aplc.mdl", bone = "glock_parent", rel = "",  pos = Vector(0, -1.2, 5.2), angle = Angle(90, -90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
+	["flashlight_aplc"] = { type = "Model", model = "models/upgrades/aplc.mdl", bone = "glock_parent", rel = "",  pos = Vector(0, -1.3, 5.5), angle = Angle(90, -90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 }
 
 SWEP.WElements = {
