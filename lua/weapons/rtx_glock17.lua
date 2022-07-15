@@ -18,6 +18,7 @@ SWEP.Weight				= 30			-- This controls how "good" the weapon is for autopickup.
 SWEP.Calibre = "9x19mm"
 SWEP.Type = "Pistol"
 SWEP.Type_Displayed = "Pistol"
+SWEP.Ergonomics = 78
 
 --[[WEAPON HANDLING]]--
 SWEP.Primary.Sound = Sound("Weapon_EFT_Glock18.Fire") -- This is the sound of the weapon, when you shoot.
@@ -249,3 +250,10 @@ SWEP.LaserSightModAttachment = 1
 SWEP.LaserSightModAttachmentWorld = 4
 
 DEFINE_BASECLASS( SWEP.Base )
+
+function SWEP:Think2()
+    if IsValid(self.Owner) and self:Clip1() <= 0  and self.Primary.ClipSize > 0 then
+	self:Reload(true)
+    end
+	BaseClass.Think2(self)
+end
