@@ -1,0 +1,15 @@
+VertexLitGeneric
+{
+	$basetexture "models/ratdock/weapons/g17gen5/g172"
+	$bumpmap "models/ratdock/weapons/g17gen5/g17_nm"
+
+	$envmap "env_cubemap"
+	$envmaptint "[0.15 0.20 0.30]"
+
+	$phong 1
+	$phongfresnelranges "[1 1 22.5]"
+	$phongexponent 67
+	$phongboost 0.03
+
+	$color2 "[0.75 0.75 0.75]"
+}
