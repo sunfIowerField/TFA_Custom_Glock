@@ -1,2 +1,6 @@
 # TFA_Custom_Glock
-TFA Custom Glock 17
+
+**A Gen 5 Glock 17 on GroveZ's Custom Base.**
+
+Requirements:
+
