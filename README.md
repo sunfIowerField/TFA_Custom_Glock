@@ -15,3 +15,5 @@ Credits:
 - Animations: Partexedd
 - Sounds: Battlestate Games
 - Lua, Compiling, Rigging: Me
+
+**Nothing is final, Textures are WIP**
