@@ -234,7 +234,7 @@ SWEP.WElements = {
 	["suppressor"] = { type = "Model", model = "models/weapons/tfa_ins2/upgrades/w_sil_pistol.mdl", bone = "ATTACH_Muzzle", rel = "ref", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, bonemerge = true, active = false },
 }
 
-SWEP.MuzzleAttachmentSilenced = 2
+SWEP.MuzzleAttachmentSilenced = 0
 SWEP.LaserSightModAttachment = 1
 SWEP.LaserSightModAttachmentWorld = 4
 
@@ -247,4 +247,4 @@ function SWEP:Think2()
 	BaseClass.Think2(self)
 end
 
--- hi this is github test
+-- second webhook test
