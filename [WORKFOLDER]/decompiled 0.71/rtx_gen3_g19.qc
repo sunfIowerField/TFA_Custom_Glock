@@ -221,7 +221,10 @@ $sequence "holster_empty" {
 
 $sequence "reload" {
 	"rtx_gen3_g19_anims\reload.smd"
+	"rtx_gen3_g19_anims\reload_2.smd"
 	activity "ACT_VM_RELOAD" 1
+	blend "sights" 0 1
+	blendwidth 2
 	fadein 0.2
 	fadeout 0.2
 	snap
@@ -229,10 +232,26 @@ $sequence "reload" {
 }
 
 $sequence "reload_empty" {
-	"rtx_gen3_g19_anims\reload_empty.smd"
+	"rtx_gen3_g19_anims\reload_empty_fesiug.smd"
+	"rtx_gen3_g19_anims\reload_empty_fesiug_2.smd"
 	activity "ACT_VM_RELOAD_EMPTY" 1
+	blend "sights" 0 1
+	blendwidth 2
 	fadein 0.2
 	fadeout 0.2
 	snap
 	fps 30
 }
+
+$sequence "reload_empty_fast" {
+	"rtx_gen3_g19_anims\reload_empty.smd"
+	"rtx_gen3_g19_anims\reload_empty_2.smd"
+	activity "ACT_VM_RELOAD_EMPTY_FAST" 1
+	blend "sights" 0 1
+	blendwidth 2
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+

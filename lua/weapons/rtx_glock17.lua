@@ -121,6 +121,7 @@ SWEP.InspectAng = Vector(24.622, 42.915, 15.477)
 SWEP.StatusLengthOverride = {
 	["reload"] = 34 / 30,
 	["reload_empty"] = 35 / 30,
+	["reload_empty_fast"] = 35 / 30,
 }
 
 SWEP.Sights_Mode = TFA.Enum.LOCOMOTION_LUA -- ANI = mdl, HYBRID = lua but continue idle, Lua = stop mdl animation
@@ -163,6 +164,8 @@ SWEP.LuaShellEjectDelay = 0 --The delay to actually eject things
 SWEP.LuaShellEffect = "ShellEject" --The effect used for shell ejection; Defaults to that used for blowback
 --[[EVENT TABLE]]--
 
+
+
 SWEP.EventTable = {
 	["Draw"] = {
 		{time = 0, type = "sound", value = Sound("TFA_INS2.PistolDraw")},
@@ -179,8 +182,15 @@ SWEP.EventTable = {
 	["reload_empty"] = {
 		{time = 0.1, type = "sound", value = "weapons/glock17/glock_reload_magout_01.wav"},
 		{time = 0.92, type = "sound", value = "weapons/glock17/glock_reload_magin_01.wav"},
-		{time = 1.28, type = "sound", value = "weapons/glock17/SlideForward.wav"},
-		{time = 1.49, type = "sound", value = "weapons/glock17/cloth.wav"},
+		{time = 50 / 30, type = "sound", value = "weapons/glock17/slideback.wav"},
+		{time = 53 / 30, type = "sound", value = "weapons/glock17/SlideForward.wav"},
+		
+	},
+	["reload_empty_fast"] = {
+		{time = 0.1, type = "sound", value = "weapons/glock17/glock_reload_magout_01.wav"},
+		{time = 0.92, type = "sound", value = "weapons/glock17/glock_reload_magin_01.wav"},
+		{time = 44 / 30, type = "sound", value = "weapons/glock17/slide_release.wav"},
+		
 	},
 	["reload"] = {
 		{time = 0.0, type = "sound", value = "weapons/glock17/cloth2.wav"},
@@ -199,6 +209,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
 	[11] = { atts = { "glock17_osprey9" }},
 	[12] = { atts = { "grovez_flashlight_inforce_wild1" }},
+	[13] = { atts = { "glock17_fastreload" }},
 }
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
@@ -235,7 +246,30 @@ SWEP.FlashlightLightsourceAng = Angle(0, 0, 0)
 SWEP.FlashlightLightsourcePos_APLc = Vector(0, 0.7, 6.25)
 SWEP.FlashlightLightsourceAng_APLc = Angle(0, 0, 0)
 
+
+SWEP.MagImpactSounds = {
+	"weapons/tfa_grovez/shared/mag_drop/concrete/iw8_phys_mag_drop_ak_poly_concrete_01.wav",
+	"weapons/tfa_grovez/shared/mag_drop/concrete/iw8_phys_mag_drop_ak_poly_concrete_02.wav",
+	"weapons/tfa_grovez/shared/mag_drop/concrete/iw8_phys_mag_drop_ak_poly_concrete_03.wav",
+	"weapons/tfa_grovez/shared/mag_drop/concrete/iw8_phys_mag_drop_ak_poly_concrete_04.wav",
+	"weapons/tfa_grovez/shared/mag_drop/concrete/iw8_phys_mag_drop_ak_poly_concrete_05.wav",
+	"weapons/tfa_grovez/shared/mag_drop/concrete/iw8_phys_mag_drop_ak_poly_concrete_06.wav"
+}
+SWEP.MagModel = "models/weapons/rtx_g19_mag.mdl"
+SWEP.MagBodygroups = "000"
+SWEP.MagSkin = 0
+SWEP.MagDropSrcForward = 11
+SWEP.MagDropSrcRight = 4
+SWEP.MagDropSrcUp = -16
+SWEP.MagDropAng = Angle(-85, 0, 0)
+SWEP.MagYeetVelocityForward = 25
+SWEP.MagYeetVelocityRight = 0
+SWEP.MagYeetVelocityUp = 0
+SWEP.MagAngleVelocity = Vector(math.random(-50, 50), -200, math.random(-50, 50))
+SWEP.MagRemovalTimer = 60
+
 DEFINE_BASECLASS( SWEP.Base )
+
 
 
 
