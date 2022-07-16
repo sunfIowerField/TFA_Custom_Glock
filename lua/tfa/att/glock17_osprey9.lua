@@ -30,7 +30,7 @@ ATTACHMENT.WeaponTable = {
 		}
 	},
 	["ViewModelBoneMods"] = {
-		["tag_flash"] = { scale = Vector(1, 1, 1), pos = Vector(4.5, 0, 0), angle = Angle(0, 0, 0) },
+		["glock_flash_supp"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 7.5), angle = Angle(0, 0, 0) },
 	},
 	["Primary"] = {
 		["KickUp"] = function(wep,stat) return stat * 0.88 end,
@@ -39,7 +39,7 @@ ATTACHMENT.WeaponTable = {
 		["Sound"] = function(wep,stat) return wep.Primary.SilencedSound or stat end
 	},
 	["MuzzleFlashEffect"] = "tfa_muzzleflash_silenced",
-	["MuzzleAttachmentMod"] = function(wep,stat) return wep.MuzzleAttachmentSilenced or stat end,
+	["MuzzleAttachmentMod"] = function(wep, stat) return wep.MuzzleAttachmentSilenced or stat end,
 	["Silenced"] = true,
 	["IronSightTime"] = function( wep, val ) return val * 1.25 end,
 }

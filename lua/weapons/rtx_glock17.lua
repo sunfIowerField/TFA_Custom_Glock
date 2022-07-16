@@ -137,7 +137,6 @@ SWEP.Blowback_PistolMode    = true -- Do we recover from blowback when empty?
 SWEP.Blowback_Shell_Enabled = false -- Shoot shells through blowback animations
 SWEP.Blowback_Shell_Effect  = "ShellEject" -- Which shell effect to use
 SWEP.BlowbackAllowAnimation = true -- Allow playing shoot animation with blowback?
-SWEP.CameraAttachmentScale = -4
 
 --MDL Animations Below
 SWEP.SprintAnimation = {
@@ -152,7 +151,10 @@ SWEP.SprintAnimation = {
 --[[EFFECTS]]--
 --Attachments
 SWEP.MuzzleFlashEnabled = true --Enable muzzle flash
-SWEP.MuzzleAttachment			= "muzzle" 		-- Should be "1" for CSS models or "muzzle" for hl2 models
+SWEP.MuzzleAttachment = 1
+SWEP.MuzzleAttachmentSilenced = 2
+SWEP.ShellEjectAttachment = 3
+SWEP.CameraAttachmentScale = 4
 SWEP.MuzzleFlashEffect = "tfa_muzzleflash_pistol" --Change to a string of your muzzle flash effect.  Copy/paste one of the existing from the base.
 --Shell eject override
 SWEP.ShellAttachment			= "shell" 		-- Should be "2" for CSS models or "shell" for hl2 models
@@ -196,7 +198,7 @@ SWEP.EventTable = {
 --[[ATTACHMENTS]]--
 SWEP.Attachments = {
 	[11] = { atts = { "glock17_osprey9" }},
-	[12] = { atts = { "glock17_aplc" }},
+	[12] = { atts = { "grovez_flashlight_inforce_wild1" }},
 }
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
@@ -222,16 +224,20 @@ SWEP.VElements = {
 	["suppressor_rotor43"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/rotor/v_rotor.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 	["suppressor_srd9"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/srd/v_srd.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 
-	["flashlight_aplc"] = { type = "Model", model = "models/upgrades/aplc.mdl", bone = "glock_parent", rel = "",  pos = Vector(0, -1.3, 5.5), angle = Angle(90, -90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
+	["flashlight_aplc"] = { type = "Model", model = "models/weapons/tfa_grovez/mods/tactical/flashlight_inforce_wild1/tactical.mdl", bone = "glock_parent", rel = "",  pos = Vector(0, -1.15, 5.35), angle = Angle(-90, -90, 0), size = Vector(1.25, 1.25, 1.25), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 }
 
 SWEP.WElements = {
 	["suppressor"] = { type = "Model", model = "models/weapons/tfa_ins2/upgrades/w_sil_pistol.mdl", bone = "ATTACH_Muzzle", rel = "ref", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, bonemerge = true, active = false },
 }
 
-SWEP.MuzzleAttachmentSilenced = 0
 SWEP.LaserSightModAttachment = 1
 SWEP.LaserSightModAttachmentWorld = 4
+
+SWEP.FlashlightLightsourcePos = Vector(0, 0, 0)
+SWEP.FlashlightLightsourceAng = Angle(0, 0, 0)
+SWEP.FlashlightLightsourcePos_APLc = Vector(0, 0.7, 6.25)
+SWEP.FlashlightLightsourceAng_APLc = Angle(0, 0, 0)
 
 DEFINE_BASECLASS( SWEP.Base )
 
