@@ -162,7 +162,7 @@ SWEP.MuzzleAttachment = 1
 SWEP.MuzzleAttachmentSilenced = 2
 SWEP.ShellEjectAttachment = 3
 SWEP.CameraAttachmentScale = 4
-SWEP.MuzzleFlashEffect = "tfa_muzzleflash_pistol" --Change to a string of your muzzle flash effect.  Copy/paste one of the existing from the base.
+SWEP.MuzzleFlashEffect = "ayykyu_muzzleflash_pistol" --Change to a string of your muzzle flash effect.  Copy/paste one of the existing from the base.
 --Shell eject override
 SWEP.ShellAttachment			= "shell" 		-- Should be "2" for CSS models or "shell" for hl2 models
 SWEP.LuaShellEject = true --Enable shell ejection through lua?
