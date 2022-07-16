@@ -1,3 +1,4 @@
+--//BASE STUFF
 SWEP.Base				= "tfa_custom_base"
 SWEP.Category				= "TFA RTX's Things" --The category.  Please, just choose something generic or something I've already done if you plan on only doing like one swep..
 SWEP.Manufacturer = "Glock" --Gun Manufactrer (e.g. Hoeckler and Koch )
@@ -20,7 +21,12 @@ SWEP.Type = "Pistol"
 SWEP.Type_Displayed = "Pistol"
 SWEP.Ergonomics = 78
 
---[[WEAPON HANDLING]]--
+--//SCREENSHAKE
+SWEP.ScreenShakeForceMultiplier = 0.4
+SWEP.ScreenShakeFOVMultiplier = 0.2
+SWEP.ScreenShakeSpeedMultiplier = 0.5
+
+--//WEAPON STUFF
 SWEP.Primary.Sound = Sound("RTX_Glock17.Fire") -- This is the sound of the weapon, when you shoot.
 SWEP.Primary.SilencedSound = Sound("RTX_Glock17.Fire_Suppressed") -- This is the sound of the weapon, when silenced.
 SWEP.Primary.Damage = 29 -- Damage, in standard damage points.
@@ -32,8 +38,8 @@ SWEP.Primary.Automatic = false -- Automatic/Semi Auto
 SWEP.Primary.RPM = 600 -- This is in Rounds Per Minute / RPM
 SWEP.Primary.Velocity = 315 -- m/s
 
+--//FIRE STUFF
 SWEP.FiresUnderwater = true
---Selective Fire Stuff
 SWEP.SelectiveFire = false -- Allow selecting your firemode?
 SWEP.DisableBurstFire = true -- Only auto/single?
 SWEP.OnlyBurstFire = false -- No auto, only burst/single?
@@ -42,7 +48,7 @@ SWEP.DefaultFireMode = "" -- Default to auto or whatev
 SWEP.FireModeName = nil -- Change to a text value to override it
 SWEP.FireSoundAffectedByClipSize = true -- Whenever adjuct pitch (and proably other properties) of fire sound based on current clip / maxclip
 
---Ammo Related
+--//AMMO RELATED
 SWEP.Primary.ClipSize = 17 -- This is the size of a clip
 SWEP.Primary.DefaultClip = SWEP.Primary.ClipSize * 10 -- This is the number of bullets the gun gives you, counting a clip as defined directly above.
 SWEP.Primary.Ammo = "pistol" -- What kind of ammo.  Options, besides custom, include pistol, 357, smg1, ar2, buckshot, slam, SniperPenetratedRound, and AirboatGun.
