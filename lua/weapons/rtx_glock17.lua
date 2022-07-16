@@ -217,12 +217,8 @@ SWEP.Bodygroups_V = {
 
 SWEP.VElements = {
 
-	["muzzle_annihilator"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/muzzles/annihilator/v_muzzle_annihilator.mdl", bone = "A_Suppressor", rel = "", pos = Vector(0, 0, 0), angle = Angle(0, -90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
-	["suppressor_mpxsd"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/v_mpx_sd.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(-2, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
-	["suppressor_aac"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/aac/v_aac.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 	["suppressor_osprey9"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/osprey/v_osprey.mdl", bone = "glock_flash", rel = "",  pos = Vector(0, 0.1, -0.1), angle = Angle(90, -90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
-	["suppressor_rotor43"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/rotor/v_rotor.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
-	["suppressor_srd9"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/srd/v_srd.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
+	
 
 	["flashlight_aplc"] = { type = "Model", model = "models/weapons/tfa_grovez/mods/tactical/flashlight_inforce_wild1/tactical.mdl", bone = "glock_parent", rel = "",  pos = Vector(0, -1.15, 5.4), angle = Angle(-90, -90, 0), size = Vector(1.3, 1.3, 1.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 }
@@ -241,11 +237,6 @@ SWEP.FlashlightLightsourceAng_APLc = Angle(0, 0, 0)
 
 DEFINE_BASECLASS( SWEP.Base )
 
-function SWEP:Think2()
-    if IsValid(self.Owner) and self:Clip1() <= 0  and self.Primary.ClipSize > 0 then
-	self:Reload(true)
-    end
-	BaseClass.Think2(self)
-end
 
--- second webhook test
+
+-- nice
