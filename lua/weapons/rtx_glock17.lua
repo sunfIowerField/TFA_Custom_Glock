@@ -227,11 +227,38 @@ SWEP.Bodygroups_V = {
 }
 
 SWEP.VElements = {
-
-	["suppressor_osprey9"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/osprey/v_osprey.mdl", bone = "glock_flash", rel = "",  pos = Vector(0, 0.1, -0.1), angle = Angle(90, -90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
-	
-
-	["flashlight_aplc"] = { type = "Model", model = "models/weapons/tfa_grovez/mods/tactical/flashlight_inforce_wild1/tactical.mdl", bone = "glock_parent", rel = "",  pos = Vector(0, -1.15, 5.4), angle = Angle(-90, -90, 0), size = Vector(1.3, 1.3, 1.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
+	["flashlight_aplc"]  = {
+		type = "Model",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_inforce_wild1/tactical.mdl",
+		bone = "glock_parent",
+		rel = "",
+		pos = Vector(0, -1.15, 5.4),
+		angle = Angle(-90, -90, 0),
+		size = Vector(1.3, 1.3, 1.3),
+		color = Color(255, 255, 255, 255),
+		surpresslightning = false,
+		material = "",
+		skin = 0,
+		bodygroup = {},
+		active = false,
+		bonemerge = false
+	},
+	["suppressor_osprey9"]  = {
+		type = "Model",
+		model = "models/weapons/tfa_eft/upgrades/silencers/osprey/v_osprey.mdl", -- gonna get a custom model later, i dont like this one that much
+		bone = "glock_flash",
+		rel = "",
+		pos = Vector(0, 0.1, -0.1),
+		angle = Angle(90, -90, 0),
+		size = Vector(1,1,1),
+		color = Color(255, 255, 255, 255),
+		surpresslightning = false,
+		material = "",
+		skin = 0,
+		bodygroup = {},
+		active = false,
+		bonemerge = false
+	},
 }
 
 SWEP.WElements = {

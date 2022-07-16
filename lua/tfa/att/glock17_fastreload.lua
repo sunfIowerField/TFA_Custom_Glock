@@ -4,7 +4,7 @@ end
 
 ATTACHMENT.Name = "Tactical Reload"
 ATTACHMENT.Description = { 
-    Color(50, 255, 50), "[+] Faster Reload due to better training."
+    Color(50, 255, 50), "[+] Faster Empty Reload due to better training."
 }
 ATTACHMENT.Icon = "entities/glock17_soh.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
 ATTACHMENT.ShortName = "REAL"
