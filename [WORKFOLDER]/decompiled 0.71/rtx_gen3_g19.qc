@@ -212,7 +212,7 @@ $sequence "holster" {
 
 $sequence "holster_empty" {
 	"rtx_gen3_g19_anims\holster_empty.smd"
-	activity "ACT_VM_HOLSTER_SILENCED" 1
+	activity "ACT_VM_HOLSTER_EMPTY" 1
 	fadein 0.2
 	fadeout 0.2
 	snap
