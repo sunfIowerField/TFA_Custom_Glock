@@ -119,9 +119,9 @@ SWEP.InspectPos = Vector(7, -10, -2)
 SWEP.InspectAng = Vector(24.622, 42.915, 15.477)
 --[[ANIMATION]]--
 SWEP.StatusLengthOverride = {
-	[ACT_VM_RELOAD] = 64 / 30,
-	[ACT_VM_RELOAD_EMPTY] = 64 / 30,
-} --Changes the status delay of a given animation; only used on reloads.  Otherwise, use SequenceLengthOverride or one of the others
+	["reload"] = 34 / 30,
+	["reload_empty"] = 35 / 30,
+}
 
 SWEP.Sights_Mode = TFA.Enum.LOCOMOTION_LUA -- ANI = mdl, HYBRID = lua but continue idle, Lua = stop mdl animation
 SWEP.Sprint_Mode = TFA.Enum.LOCOMOTION_LUA -- ANI = mdl, HYBRID = ani + lua, Lua = lua only
@@ -224,7 +224,7 @@ SWEP.VElements = {
 	["suppressor_rotor43"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/rotor/v_rotor.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 	["suppressor_srd9"] = { type = "Model", model = "models/weapons/tfa_eft/upgrades/silencers/srd/v_srd.mdl", bone = "A_Suppressor", rel = "",  pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 
-	["flashlight_aplc"] = { type = "Model", model = "models/weapons/tfa_grovez/mods/tactical/flashlight_inforce_wild1/tactical.mdl", bone = "glock_parent", rel = "",  pos = Vector(0, -1.15, 5.35), angle = Angle(-90, -90, 0), size = Vector(1.25, 1.25, 1.25), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
+	["flashlight_aplc"] = { type = "Model", model = "models/weapons/tfa_grovez/mods/tactical/flashlight_inforce_wild1/tactical.mdl", bone = "glock_parent", rel = "",  pos = Vector(0, -1.15, 5.4), angle = Angle(-90, -90, 0), size = Vector(1.3, 1.3, 1.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} , bonemerge = false, active = false },
 }
 
 SWEP.WElements = {
