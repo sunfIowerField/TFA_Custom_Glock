@@ -113,7 +113,8 @@ SWEP.data.ironsights = 1 --Enable Ironsights
 SWEP.Secondary.IronFOV = 80 -- How much you 'zoom' in. Less is more!  Don't have this be <= 0.  A good value for ironsights is like 70.
 SWEP.IronSightsPos = Vector(-2.315, -3, 2.6)
 SWEP.IronSightsAng = Vector(0.5, 0, 0)
-SWEP.IronSightsReloadEnabled    = true
+SWEP.IronSightsReloadEnabled = true
+SWEP.IronSightsReloadLock = false
 SWEP.IronSightsPos_Point_Shooting = Vector(-4, -5, 1)
 SWEP.IronSightsAng_Point_Shooting = Vector(0, 0, -30)
 SWEP.Secondary.Point_Shooting_FOV = 75
