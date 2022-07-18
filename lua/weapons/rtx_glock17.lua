@@ -131,6 +131,8 @@ SWEP.StatusLengthOverride = {
 	["reload_empty_fast"] = 35 / 30,
 }
 
+SWEP.UseModSwitchProceduralAnimation = true
+
 SWEP.Sights_Mode = TFA.Enum.LOCOMOTION_LUA -- ANI = mdl, HYBRID = lua but continue idle, Lua = stop mdl animation
 SWEP.Sprint_Mode = TFA.Enum.LOCOMOTION_LUA -- ANI = mdl, HYBRID = ani + lua, Lua = lua only
 
